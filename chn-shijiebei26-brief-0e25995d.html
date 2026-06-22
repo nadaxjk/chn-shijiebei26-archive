@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世界杯知识库 · 索引页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #f9f6f0;
+            font-family: 'Segoe UI', 'Roboto', system-ui, -apple-system, sans-serif;
+            color: #2c2c2c;
+            line-height: 1.7;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            padding: 2rem 1.5rem;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        header {
+            border-bottom: 2px solid #e5dccc;
+            padding-bottom: 1.2rem;
+            margin-bottom: 2.5rem;
+        }
+        header h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: #3b2e1e;
+            margin-bottom: 0.4rem;
+        }
+        header p {
+            color: #6b5f4d;
+            font-size: 0.95rem;
+        }
+        .hero-note {
+            background: #f3efe6;
+            padding: 1.8rem 2rem;
+            border-radius: 20px;
+            margin-bottom: 2.8rem;
+            border-left: 6px solid #b8a58b;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            font-size: 1rem;
+        }
+        .hero-note strong {
+            color: #4a3e2b;
+        }
+        .grid-sections {
+            display: flex;
+            flex-direction: column;
+            gap: 2.4rem;
+        }
+        .section-card {
+            background: #fffffffa;
+            border-radius: 18px;
+            padding: 1.8rem 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02), 0 1px 3px rgba(0,0,0,0.03);
+            border: 1px solid #ece6da;
+        }
+        .section-card h2 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #3f3220;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px dashed #ddd6c8;
+        }
+        .section-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .section-card ul li {
+            padding: 0.5rem 0 0.5rem 1.8rem;
+            position: relative;
+            color: #3d3a33;
+        }
+        .section-card ul li::before {
+            content: "·";
+            position: absolute;
+            left: 0.4rem;
+            color: #9b8b73;
+            font-weight: bold;
+            font-size: 1.4rem;
+            line-height: 1.4;
+        }
+        .tip-box {
+            background: #ede9df;
+            border-radius: 14px;
+            padding: 1.4rem 1.8rem;
+            margin: 1.2rem 0 0.6rem;
+            border: 1px solid #dbd2c2;
+            color: #3f3a2e;
+            font-size: 0.95rem;
+        }
+        .tip-box .label {
+            display: inline-block;
+            background: #b8a78b;
+            color: #fcf9f3;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            padding: 0.15rem 0.8rem;
+            border-radius: 30px;
+            margin-right: 0.6rem;
+            text-transform: uppercase;
+        }
+        .faq-mini {
+            margin-top: 1rem;
+        }
+        .faq-item {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #e7e0d4;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-item .q {
+            font-weight: 500;
+            color: #4b3f2c;
+            margin-bottom: 0.2rem;
+        }
+        .faq-item .a {
+            color: #5c5546;
+            padding-left: 1.2rem;
+            font-size: 0.95rem;
+        }
+        .related-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem 2rem;
+            margin-top: 0.6rem;
+        }
+        .related-links a {
+            color: #4a6a5a;
+            text-decoration: none;
+            border-bottom: 1px dotted #b8c9bc;
+            transition: border 0.15s;
+        }
+        .related-links a:hover {
+            border-bottom: 1px solid #2e4a3a;
+        }
+        .cta-inline {
+            background: #fcf9f4;
+            padding: 1.4rem 2rem;
+            border-radius: 60px;
+            text-align: center;
+            margin: 2rem 0 1.5rem;
+            border: 1px solid #e2d9ca;
+            font-size: 1.1rem;
+        }
+        .cta-inline a {
+            color: #2c5a45;
+            font-weight: 500;
+            text-decoration: none;
+            border-bottom: 2px solid #cbddcf;
+            padding-bottom: 1px;
+            transition: border 0.2s;
+        }
+        .cta-inline a:hover {
+            border-bottom-color: #2c5a45;
+        }
+        .footer-note {
+            margin-top: 3rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #e0d9cb;
+            text-align: center;
+            color: #7a7264;
+            font-size: 0.85rem;
+            letter-spacing: 0.3px;
+        }
+        @media (max-width: 600px) {
+            body { padding: 1.5rem 1rem; }
+            header h1 { font-size: 1.8rem; }
+            .section-card { padding: 1.4rem 1.2rem; }
+            .hero-note { padding: 1.4rem 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>⚽ 世界杯 · 知识库入口</h1>
+        <p>认真整理，持续关注 —— 适合再次访问与收藏的索引页</p>
+    </header>
+
+    <div class="hero-note">
+        <strong>欢迎回来。</strong> 这里不追赶流量，只把关于 <a href="https://chn-shijiebei26.com" style="color:#2c5a45; text-decoration: underline; text-underline-offset: 3px;">世界杯</a> 的可靠信息、基础档案和常用链接做干净梳理。页面会随赛事周期缓慢更新，适合作为浏览器书签或常驻标签页。
+    </div>
+
+    <div class="grid-sections">
+
+        <!-- 目录感区块：主要信息区 -->
+        <div class="section-card">
+            <h2>📋 目录 · 赛事档案</h2>
+            <ul>
+                <li>历届世界杯冠军、决赛场地与年份一览</li>
+                <li>预选赛阶段与决赛圈抽签规则简述</li>
+                <li>主要记录：射手榜、出场王、冠军次数</li>
+                <li>主办国轮换原则与未来两届承办信息</li>
+                <li>经典比赛与战术变革参考（持续新增）</li>
+            </ul>
+            <div class="tip-box">
+                <span class="label">提示</span> 目录内容主要基于国际足联公开信息与历史资料汇编，不包含未证实的预测或传闻。
+            </div>
+        </div>
+
+        <!-- 说明区：再次访问 & 收藏价值 -->
+        <div class="section-card">
+            <h2>📌 说明 · 为什么值得再次访问</h2>
+            <p style="margin-bottom: 0.8rem;">本页定位为轻量知识库入口，不铺广告、不自动刷新。适合以下场景：</p>
+            <ul>
+                <li>大赛期间快速查阅基础赛程与背景</li>
+                <li>收藏后隔届返回，对比数据变化</li>
+                <li>作为个人研究或写作的起点索引</li>
+                <li>避开信息轰炸，只保留结构化内容</li>
+            </ul>
+            <p style="margin-top: 0.8rem; color: #5d5547; font-size: 0.95rem;">每次更新都会保留历史版本说明，你可以感知内容如何随时间沉淀。</p>
+        </div>
+
+        <!-- 提示区：关注与使用建议 -->
+        <div class="section-card">
+            <h2>💡 提示区 · 更有效地使用</h2>
+            <div class="faq-mini">
+                <div class="faq-item">
+                    <div class="q">🔹 我想第一时间获取最新内容？</div>
+                    <div class="a">建议将本页加入浏览器书签（或手机主屏幕）。更新频率通常为每月一次，大赛期间缩短至每周。不设邮件推送，保持安静。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="q">🔹 页面会包含外部链接吗？</div>
+                    <div class="a">只会链接到国际足联官网、可靠数据站以及本站 <a href="https://chn-shijiebei26.com" style="color:#2c5a45; text-decoration: underline; text-underline-offset: 2px;">世界杯</a> 核心页。不添加联盟营销或未经验证来源。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="q">🔹 我是否可以转载或引用内容？</div>
+                    <div class="a">所有内容均基于公开事实整理，引用时注明出处即可。不设版权限制，但请保持原意完整。</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 相关信息区 + FAQ摘要 -->
+        <div class="section-card">
+            <h2>🔍 相关信息 & FAQ 摘要</h2>
+            <div class="related-links">
+                <a href="https://chn-shijiebei26.com">世界杯</a>
+                <span style="color:#b1a694;">·</span>
+                <a href="#">历届冠军</a>
+                <a href="#">决赛数据</a>
+                <a href="#">赛制百科</a>
+                <a href="#">主办国列表</a>
+                <a href="#">纪录与里程碑</a>
+            </div>
+            <div style="margin-top: 1.2rem; background: #f7f3ea; padding: 0.8rem 1.2rem; border-radius: 12px;">
+                <p style="font-size: 0.95rem;"><strong>常见问题简短回答：</strong></p>
+                <ul style="margin-top: 0.2rem; font-size: 0.9rem; color: #4d463a;">
+                    <li>下一届世界杯在哪年？—— 2026（美加墨联合主办）</li>
+                    <li>哪支球队夺冠次数最多？—— 巴西（5次）</li>
+                    <li>是否有专门的球队页面？—— 正在逐步整理中，先从核心页开始。</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="cta-inline">
+        🏆 回到整理好的起点 —— <a href="https://chn-shijiebei26.com">世界杯</a> 知识库主页
+    </div>
+
+    <div class="footer-note">
+        页面版本 · 2025 年 5 月 整理 &nbsp;|&nbsp; 建议收藏以便回访 &nbsp;|&nbsp; 无追踪无广告
+    </div>
+</div>
+</body>
+</html>
